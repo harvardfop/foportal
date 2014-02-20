@@ -1,0 +1,52 @@
+/**
+ * styles.css
+ *
+ * FOPortal
+ * v.0.1
+ *
+ * Global CSS.
+ */
+
+.container
+{
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.row
+{
+    margin-top: 10px;
+}
+
+.row .profile-picture
+{
+    text-align: right;
+}
+
+.row .profile-info
+{
+    text-align: left;
+}
+
+#controls
+{
+    margin-top: 25px;
+    text-align: right;
+}
+
+#middle .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+#bottom
+{
+    /* surround with whitespace */
+    margin: 20px;
+}
