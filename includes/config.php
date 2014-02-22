@@ -14,6 +14,8 @@
     error_reporting(E_ALL);
 
     // requirements
+    require("fields.php");
+    require("houses.php");
     require("constants.php");
     require("functions.php");
 

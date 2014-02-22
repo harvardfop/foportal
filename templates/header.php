@@ -7,6 +7,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="icon" href="/img/favicon.png">
+
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/styles.css" rel="stylesheet"/>
 
@@ -28,12 +30,12 @@
             <div class="row">
                 <? if (isset($username)): ?>
                     <div id="top" class="col-md-4 col-md-offset-4">
-                        <h1><a href="/">FOPortal</a></h1>
+                        <img src="/img/logo.png" alt="logo"><h1><a href="/">FOPortal</a><sup>BETA</sup></h1>
                     </div>
                     <div id="controls" class="col-md-4">welcome <a href="/edit.php"><?= $username ?></a> | <a href="/logout.php">log out</a></div>
                 <? else: ?>
                     <div id="top">
-                        <h1><a href="/">FOPortal</a></h1>
+                        <img src="/img/logo.png" alt="logo"><h1><a href="/">FOPortal</a><sup>BETA</sup></h1>
                     </div>
                 <? endif ?>
             </div>

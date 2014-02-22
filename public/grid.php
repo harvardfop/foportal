@@ -4,12 +4,21 @@
     require("../includes/config.php");
 
     // query database for user
-    $rows = query("SELECT username FROM users WHERE id = ?", $_SESSION["id"]);
-	
-	// if we found user, store username
+    $rows = query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
+
     if (count($rows) == 1)
     {
-    	$username = $rows[0]["username"];
+        // redirect to edit page if there's missing information
+        if (empty($rows[0]["first"]) || empty($rows[0]["last"]) || empty($rows[0]["year"])
+            || empty($rows[0]["at_college"]) || empty($rows[0]["house"]))
+        {
+            redirect("edit.php");            
+        }
+        // if we found user, store username
+        else
+        {
+            $username = $rows[0]["username"];
+        }
     }
     else
     {
@@ -25,16 +34,16 @@
     	foreach ($rows as $index => $row)
     	{
             $profiles[$index]["username"] = $row["username"];
-            $profiles[$index]["photo"] = $row["photo"];
-            $profiles[$index]["first"] = $row["first"];
-            $profiles[$index]["last"] = $row["last"];
-            $profiles[$index]["year"] = $row["year"];
-            $profiles[$index]["house"] = $row["house"];
+            foreach ($fields as $field)
+            {
+                $f = $field["field"];
+                $profiles[$index][$f] = $row[$f];
+            }
     	}
     }
     else
     {
-        pologize("Something went wrong. Please try again.");
+        apologize("Something went wrong. Please try again.");
     }
 
     render("grid_view.php", ["title" => "Home", "username" => $username, "profiles" => $profiles]);

@@ -20,20 +20,49 @@
     margin-top: 10px;
 }
 
-.row .profile-picture
+.right
 {
     text-align: right;
 }
 
-.row .profile-info
+.field-label
+{
+    margin-top: 6px;
+}
+
+.left
 {
     text-align: left;
+}
+
+#top img
+{
+    height: 50px;
+    margin-right: 10px;
+    margin-top: -15px;
+}
+
+#top h1
+{
+    display: inline-block;
+    line-height: 50px;
+}
+
+#top sup
+{
+    font-size: 12px;
+    top: -20px;
 }
 
 #controls
 {
     margin-top: 25px;
     text-align: right;
+}
+
+#middle
+{
+    margin-top: 10px;
 }
 
 #middle .form-control
