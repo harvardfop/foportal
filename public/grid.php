@@ -9,16 +9,15 @@
     if (count($rows) == 1)
     {
         // redirect to edit page if there's missing information
-        if (empty($rows[0]["first"]) || empty($rows[0]["last"]) || empty($rows[0]["year"])
-            || empty($rows[0]["at_college"]) || empty($rows[0]["house"]))
+        foreach ($rows[0] as $key => $value)
         {
-            redirect("edit.php");            
+            if (empty($value))
+            {
+                redirect("edit.php");  
+            }
         }
         // if we found user, store username
-        else
-        {
-            $username = $rows[0]["username"];
-        }
+        $username = $rows[0]["username"];
     }
     else
     {
