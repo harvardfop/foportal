@@ -42,7 +42,7 @@
             {
                 // save the name of the new photo
                 $rows = query("UPDATE users SET photo = ? WHERE id = ?", $dst, $id);
-                if (rows === false) 
+                if ($rows === false) 
                 {
                     apologize("Something went wrong. Please try again.");
                 }
@@ -56,13 +56,13 @@
             }
 
             // redirect to profile
-            redirect("/edit.php");
+            redirect("edit.php");
         }
     }
     else
     {
         // else render form
-        render("register_form.php", ["title" => "Register"]);
+        render("register_form.php", array("title" => "Register"));
     }
 
 ?>

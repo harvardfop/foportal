@@ -16,7 +16,7 @@
      */
     function apologize($message)
     {
-        render("apology.php", ["message" => $message]);
+        render("apology.php", array("message" => $message));
         exit;
     }
 
@@ -37,7 +37,7 @@
     function logout()
     {
         // unset any session variables
-        $_SESSION = [];
+        $_SESSION = array();
 
         // expire cookie
         if (!empty($_COOKIE[session_name()]))
@@ -86,7 +86,8 @@
         if ($statement === false)
         {
             // trigger (big, orange) error
-            trigger_error($handle->errorInfo()[2], E_USER_ERROR);
+            $tmp = $handle->errorInfo();
+            trigger_error($tmp[2], E_USER_ERROR);
             exit;
         }
 
@@ -144,7 +145,7 @@
     /**
      * Renders template, passing in values.
      */
-    function render($template, $values = [])
+    function render($template, $values = array())
     {
         // if template exists, render it
         if (file_exists("../templates/$template"))

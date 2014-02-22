@@ -9,7 +9,7 @@
      * Global array to store all of the houses.
      */
 
-    $houses = [
+    $houses = array(
         "Adams",
         "Cabot",
         "Currier",
@@ -40,6 +40,6 @@
         "Thayer",
         "Weld",
         "Wigglesworth"
-    ];
+    );
 
 ?>

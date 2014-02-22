@@ -46,6 +46,6 @@
         apologize("Something went wrong. Please try again.");
     }
 
-    render("grid_view.php", ["title" => "Home", "username" => $username, "profiles" => $profiles]);
+    render("grid_view.php", array("title" => "Home", "username" => $username, "profiles" => $profiles));
 
 ?>

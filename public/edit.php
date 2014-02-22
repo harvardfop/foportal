@@ -80,14 +80,18 @@
         {
             apologize("You must provide a valid residential house or dormitory.");
         }
+        else if (empty($_POST["bio"]))
+        {
+            apologize("You must provide a valid biography.");
+        }
 
         // validate photo upload
         if ($_FILES["photo"]["error"] > 0 && $_FILES["photo"]["error"] != UPLOAD_ERR_NO_FILE)
         {
             apologize("You must choose a valid file to upload.");
         }
-        
-        // get 
+
+        // save the uploaded file
         if ($_FILES["photo"]["error"] != UPLOAD_ERR_NO_FILE)
         {
             $valid_types = array(IMAGETYPE_JPEG, IMAGETYPE_PNG);
@@ -102,7 +106,7 @@
             }
             else if ($size[0] != $size[1] || $size[0] < 200)
             {
-                apologize("The image must have equal width and height dimensions.");
+                apologize("The image must have equal width and height dimensions and be at least 200px by 200px.");
             }
 
             // move the uploaded file
@@ -119,17 +123,17 @@
         }
 
         // update the user's information
-        $rows = query("UPDATE users SET first = ?, last = ?, year = ?, at_college = ?, house = ? WHERE id = ?",
-            $_POST["first"], $_POST["last"], $_POST["year"], $_POST["at_college"], $_POST["house"], $_SESSION["id"]);
+        $rows = query("UPDATE users SET first = ?, last = ?, year = ?, at_college = ?, house = ?, bio = ? WHERE id = ?",
+            $_POST["first"], $_POST["last"], $_POST["year"], $_POST["at_college"], $_POST["house"], $_POST["bio"], $_SESSION["id"]);
 
         // redirect to home
-        redirect("/");
+        redirect("index.php");
     }
     else
     {
         // else render form
-        render("edit_form.php", ["title" => "Edit Profile", "username" => $rows[0]["username"],
-               "profile" => $rows[0], "fields" => $fields, "houses" => $houses]);
+        render("edit_form.php", array("title" => "Edit Profile", "username" => $rows[0]["username"],
+               "profile" => $rows[0], "fields" => $fields, "houses" => $houses));
     }
 
 ?>

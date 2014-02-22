@@ -9,25 +9,28 @@
      * Global array to store all of the fields.
      */
 
-    $fields = [
-    	["field" => "first",
+    $fields = array(
+    	array("field" => "first",
     	"long" => "First Name",
-        "example" => "Millie"],
-    	["field" => "last",
+        "example" => "Millie"),
+    	array("field" => "last",
     	"long" => "Last Name",
-        "example" => "Teplitz"],
-    	["field" => "year",
+        "example" => "Teplitz"),
+    	array("field" => "year",
     	"long" => "Class Year",
-        "example" => "2018"],
-    	["field" => "at_college",
-    	"long" => "@college Email Address",
-        "example" => "woof"],
-    	["field" => "photo",
+        "example" => "2018"),
+    	array("field" => "at_college",
+    	"long" => "Email Address",
+        "example" => "woof"),
+    	array("field" => "photo",
     	"long" => "Profile Picture",
-        "example" => "N/A"],
-		["field" => "house",
+        "example" => "N/A"),
+		array("field" => "house",
     	"long" => "Residential House or Dorm",
-        "example" => "Currier"],
-    ];
+        "example" => "Currier"),
+        array("field" => "bio",
+        "long" => "About Me",
+        "example" => "I <3 FOP!"),        
+    );
 
 ?>

@@ -1,16 +1,17 @@
 <form action="login.php" method="post">
     <fieldset>
-        <div class="form-group">
-            <input autofocus class="form-control" name="username" placeholder="Username" type="text"/>
+        <div class="input-group">
+            <span class='input-group-addon'>Username</span>
+            <input autofocus class="form-control" name="username" type="text"/>
         </div>
-        <div class="form-group">
-            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        <div class="input-group">
+            <span class='input-group-addon'>Password</span>
+            <input class="form-control" name="password" type="password"/>
         </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-default">Log In</button>
-        </div>
+        <button type="submit" class="btn btn-default">Log In</button>
     </fieldset>
 </form>
+<br>
 <div>
     or <a href="register.php">register</a> for an account
 </div>
