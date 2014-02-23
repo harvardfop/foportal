@@ -25,7 +25,7 @@
     }
 
     // query database for all users
-    $rows = query("SELECT * FROM users ORDER BY last ASC");
+    $rows = query("SELECT * FROM users WHERE first IS NOT NULL ORDER BY first ASC, last ASC");
 	
 	// store information for all users
     if (count($rows) >= 1)
