@@ -1,7 +1,7 @@
 <?php
 	
     // configuration
-    require("../includes/config.php");
+    require("includes/config.php");
 
     // query database for user
     $rows = query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
