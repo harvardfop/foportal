@@ -9,30 +9,16 @@
      * Global constants.
      */
 
-/*
     // your database's name
-    define("DATABASE", "FOPortal");
+    define("DATABASE", "foportal_db");
 
     // your database's password
-    define("PASSWORD", "crimson");
+    define("PASSWORD", "myKUb/XD=aZWr9qf2etM");
 
     // your database's server
-    define("SERVER", "localhost");
+    define("SERVER", "mysql.foportal.co");
 
     // your database's username
-    define("USERNAME", "jharvard");
-*/
-
-    // your database's name
-    define("DATABASE", "fop");
-
-    // your database's password
-    define("PASSWORD", "eaL4pPJjWBFcn5Qm");
-
-    // your database's server
-    define("SERVER", "mysql.hcs.harvard.edu");
-
-    // your database's username
-    define("USERNAME", "fop");
+    define("USERNAME", "harvardfop");
 
 ?>
