@@ -10,7 +10,7 @@
 					});
 				</script>
                 <p>Feedback for the site? Found a bug? Would like to see a feature in future versions?<br>
-                Please send us <a href="#" target="_blank">an email</a>!</p>
+                Please <a href="#" target="_blank">send us an email</a>!</p>
             </div>
 
         </div>
