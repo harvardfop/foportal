@@ -11,6 +11,49 @@
 
     require_once("constants.php");
 
+    // ensure string contains only alphabetic characters
+    function validate_text_plus($str)
+    {
+        $valid = array("-", " ");
+        if (ctype_alpha(str_replace($valid, "", $str)))
+        {
+            return true;
+        }
+        return false;
+    };
+
+    // ensure string contains only four integers
+    function validate_class_year($str)
+    {
+        $valid = array("");
+        if (ctype_digit(str_replace($valid, "", $str)) && strlen($str) == 4)
+        {
+            return true;
+        }
+        return false;
+    }; 
+
+    // ensure string contains only alphabetic characters
+    function validate_alpha($str)
+    {
+        $valid = array("");
+        if (ctype_alnum(str_replace($valid, "", $str)))
+        {
+            return true;
+        }
+        return false;
+    };  
+
+    // ensure string is a valid house
+    function validate_house($str, $houses)
+    {
+        if (in_array($str, $houses))
+        {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Apologizes to user with message.
      */

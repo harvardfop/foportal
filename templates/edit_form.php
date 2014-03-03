@@ -1,4 +1,3 @@
-
 <form enctype="multipart/form-data" action="edit.php" method="post">
     <fieldset>
         <?
@@ -63,11 +62,11 @@
             }
             
             // format photo upload input
-            $field = $fields[4];
+            $key = array_search(array("field" => "photo", "long" => "Profile Picture", "example" => "N/A"), $fields);
             echo "<br><div>Upload a new profile picture below.<br>(Your picture should be either a JPEG or PNG file<br>
                 and have <a href='//www.noproblemmac.com/blog/2013/03/11/preview-the-fastest-way-to-crop-an-image-on-your-mac/'
                 target='_blank'>equal width and height dimensions</a>.)</div>";
-            echo "<input class='form-control' name='" . $field["field"] . "' type='file'>";
+            echo "<input class='form-control' name='" . $fields[$key]["field"] . "' type='file'>";
         ?>
         <div class="form-group">
             <button type="submit" class="btn btn-default">Submit</button>

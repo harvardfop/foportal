@@ -3,49 +3,6 @@
     // configuration
     require("includes/config.php"); 
 
-    // ensure string contains only alphabetic characters
-    function validate_text($str)
-    {
-        $valid = array("-", " ");
-        if (ctype_alpha(str_replace($valid, "", $str)))
-        {
-            return true;
-        }
-        return false;
-    };
-
-    // ensure string contains only four integers
-    function validate_year($str)
-    {
-        $valid = array("");
-        if (ctype_digit(str_replace($valid, "", $str)) && strlen($str) == 4)
-        {
-            return true;
-        }
-        return false;
-    }; 
-
-    // ensure string contains only alphabetic characters
-    function validate_at_college($str)
-    {
-        $valid = array("");
-        if (ctype_alnum(str_replace($valid, "", $str)))
-        {
-            return true;
-        }
-        return false;
-    };  
-
-    // ensure string is a valid house
-    function validate_house($str, $houses)
-    {
-        if (in_array($str, $houses))
-        {
-            return true;
-        }
-        return false;
-    }
-
     // query database for user
     $rows = query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
 
@@ -60,19 +17,19 @@
     {
         
         // validate data entry fields
-        if (empty($_POST["first"]) || !validate_text($_POST["first"]))
+        if (empty($_POST["first"]) || !validate_text_plus($_POST["first"]))
         {
             apologize("You must provide a valid first name.");
         }
-        else if (empty($_POST["last"]) || !validate_text($_POST["last"]))
+        else if (empty($_POST["last"]) || !validate_text_plus($_POST["last"]))
         {
             apologize("You must provide a valid last name.");
         }
-        else if (empty($_POST["year"]) || !validate_year($_POST["year"]))
+        else if (empty($_POST["year"]) || !validate_class_year($_POST["year"]))
         {
             apologize("You must provide a valid class year.");
         }
-        else if (empty($_POST["at_college"]) || !validate_at_college($_POST["at_college"]))
+        else if (empty($_POST["at_college"]) || !validate_alpha($_POST["at_college"]))
         {
             apologize("You must provide a valid @college email address.");
         }
